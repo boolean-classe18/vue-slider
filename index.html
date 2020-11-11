@@ -20,6 +20,7 @@
                     <div class="bullets">
                         <i v-for="(immagine, indice) in immagini"
                             v-bind:class="indice == indice_immagine ? 'active' : null"
+                            @click="change_image(indice)"
                             class="fas fa-circle"></i>
                     </div>
                 </div>

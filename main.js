@@ -28,7 +28,16 @@ var app = new Vue(
                 if(this.indice_immagine < 0) {
                     this.indice_immagine = this.immagini.length - 1;
                 }
+            },
+            change_image(indice_pallino) {
+                // assegno il valore dell'indice
+                this.indice_immagine = indice_pallino;
             }
+        },
+        created: function() {
+            // quando l'istanza vue è pronta, avvio l'autoplay
+            // imposto un interval di 3 secondi che fa cambiare l'immagine
+            setInterval(this.next_image, 3000);
         }
     }
 );
